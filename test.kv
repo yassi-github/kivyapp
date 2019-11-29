@@ -1,0 +1,31 @@
+#:kivy 1.11.1
+#python -m kivy.tools.kviewer C:\Users\yasus\Documents\Python_Scripts\kivyseries\test.kv
+
+TextWidget:
+
+<TextWidget@BoxLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.size
+
+        Label:
+            id: label1
+            font_size: 68
+            text: root.tex
+    
+# <TextWidget@StackLayout>:
+        BoxLayout:
+            # StackLayout:
+            # orientation: ""
+
+            Button:
+                id: button1
+                text: "O"
+                font_size: 48
+                on_press: root.buttonclicked()
+
+            Button:
+                id: button2
+                text: "K"
+                font_size: 48
+                on_release: root.buttonclicked2()
