@@ -9,8 +9,9 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.lang import Builder
 from kivy.config import Config
-Config.set('graphics', 'width', '640')
-Config.set('graphics', 'height', '480')
+Config.set('graphics', 'multisamples', '0')
+# Config.set('graphics', 'width', '640')
+# Config.set('graphics', 'height', '480')
 
 
 class RootWidget(ScreenManager):
@@ -25,14 +26,14 @@ class Testwidget(Screen):
         self.text = 'start'
 
     def buttonClicked(self):
-        self.text = 'hello'
+        self.text = 'U'
 
     def buttonClicked2(self):
-        self.text = 'hello2'
+        self.text = 'got'
 
     def buttonClicked3(self):
-        self.text = 'hello3'
-
+        pass
+    
 class SecSc(Screen):
     l0 = ObjectProperty(None)
     t0 = ObjectProperty(None)

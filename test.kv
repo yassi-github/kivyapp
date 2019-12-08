@@ -17,65 +17,69 @@ RootWidget:
         ActionBar:
             ActionView:
                 ActionPrevious:
-                    title: 'dntk'
+                    title: 'kivyapp'
                     with_previous: False
 
                 ActionButton:
-                    text: 'krke'
+                    text: 'I am just a Button.'
 
         Label:
-            size_hint_y: 1
             id: label1
+            size_hint_y: 1
             font_size: 35
             text: root.text
         
         Button:
             id: button1
-            text: "text01"
+            font_size: 35
+            text: "01"
             on_press: root.buttonClicked()
 
         Button:
             id: button2
-            text: "text02"
+            font_size: 35
+            text: "02"
             on_press: root.buttonClicked2()
             
         Button:
             id: button3
-            text: "text03"
+            font_size: 35
+            text: "03"
             on_press: 
-                root.manager.get_screen("second").l0.text = root.label1.text
-                app.root.current = "second"
+                root.text = 'that'
+                root.manager.get_screen("inputscr").l0.text = root.label1.text
+                app.root.current = "inputscr"
     
 <SecSc>:
-    name: "second"
+    name: "inputscr"
     l0: l0
     t0: t0
     BoxLayout:
         orientation: 'vertical'
         size: root.size
         ActionBar:
-            size_hint_y: 0.11
+            size_hint_y: 0.1
             ActionView:
                 ActionPrevious:
-                    title: 'dntk'
+                    title: 'return'
                     with_previous: True
                     on_release: app.root.current = "tstw"
 
                 ActionButton:
-                    text: 'krke'
+                    text: 'No response. Looks dead.'
         
                 
         BoxLayout:
             TextInput:
                 id: t0
-                multiline: False
-                text: '123'
+                multiline: True
+                text: "I like you"
             
             Label:
                 id: l0
-                text: 'xxxxx'
+                text: ''
 
             Button:
                 id: b0
-                text: "measure"
+                text: "modify!"
                 on_release: root.txtmodify()
